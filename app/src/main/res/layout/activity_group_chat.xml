@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GroupChatActivity">
+
+    <include android:id="@+id/groupChatBarLayout"
+        layout="@layout/app_bar_layout">
+    </include>
+
+    <ScrollView
+        android:layout_above="@id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/myScrollView"
+        android:layout_below="@id/groupChatBarLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/groupChatDisplayText"
+                android:padding="10dp"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:textColor="@android:color/background_dark"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="50dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout"
+        android:orientation="horizontal">
+
+        <EditText
+            android:paddingStart="5dp"
+            android:background="@drawable/input"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/inputGroupMessage"
+            android:hint="Please write your message...." />
+
+        <ImageButton
+            android:layout_gravity="center"
+            android:onClick="SendMessage"
+            android:background="@drawable/login_button"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/send_message"
+            android:id="@+id/sendMessage" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>
